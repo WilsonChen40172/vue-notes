@@ -5,6 +5,9 @@
         <div class="brand">Vue 2 學習專案</div>
         <ul class="nav-links">
           <li>
+            <router-link to="/" exact>首頁</router-link>
+          </li>
+          <li>
             <router-link to="/reactivity">響應式原理</router-link>
           </li>
           <li>

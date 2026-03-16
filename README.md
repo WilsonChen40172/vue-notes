@@ -71,7 +71,7 @@ corejs: 3;
 ## 專案結構
 
 ```
-vue2-260316/
+/
 ├── public/
 │   └── index.html           # HTML 模板
 ├── src/

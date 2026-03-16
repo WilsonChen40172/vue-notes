@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from '@/store'
 
+import HomePage from '@/views/HomePage.vue'
 import ReactivityPage from '@/views/ReactivityPage.vue'
 import VuexPage from '@/views/VuexPage.vue'
 import RouterGuardPage from '@/views/RouterGuardPage.vue'
@@ -22,7 +23,9 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: '/',
-        redirect: '/reactivity'
+        name: 'Home',
+        component: HomePage,
+        meta: { title: 'Vue 2 學習專案' }
     },
     {
         path: '/reactivity',
