@@ -25,11 +25,10 @@ module.exports = {
                 loader: 'vue-loader'
             },
             {
-                // vue-router 4.x 使用 .mjs 格式，包含 optional chaining
+                // vue-router 4.x 的 .mjs / .cjs 均含有 optional chaining 等現代語法
                 // 需要 babel 轉換才能讓 Webpack 4 正確解析
-                // 使用 path.resolve 避免 Windows 路徑反斜線導致 include regex 不匹配
-                test: /\.mjs$/,
-                include: path.resolve(__dirname, 'node_modules'),
+                test: /\.[mc]js$/,
+                include: path.resolve(__dirname, 'node_modules/vue-router'),
                 use: {
                     loader: 'babel-loader',
                     options: {
