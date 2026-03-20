@@ -2,6 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import store from '@/store'
 
 import HomePage from '@/views/HomePage.vue'
+import CompositionAPIPage from '@/views/CompositionAPIPage.vue'
+import ComposablesPage from '@/views/ComposablesPage.vue'
+import ComponentCommPage from '@/views/ComponentCommPage.vue'
 import VuexPage from '@/views/VuexPage.vue'
 import RouterGuardPage from '@/views/RouterGuardPage.vue'
 import LoginPage from '@/views/LoginPage.vue'
@@ -21,6 +24,24 @@ const routes = [
         name: 'Home',
         component: HomePage,
         meta: { title: 'Vue 3 學習專案' }
+    },
+    {
+        path: '/composition',
+        name: 'CompositionAPI',
+        component: CompositionAPIPage,
+        meta: { title: 'Composition API' }
+    },
+    {
+        path: '/composables',
+        name: 'Composables',
+        component: ComposablesPage,
+        meta: { title: 'Composables 可組合函數' }
+    },
+    {
+        path: '/component-comm',
+        name: 'ComponentComm',
+        component: ComponentCommPage,
+        meta: { title: '元件通訊' }
     },
     {
         path: '/vuex',

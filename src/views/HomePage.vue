@@ -39,6 +39,30 @@ export default {
     return {
       cards: [
         {
+          to: '/composition',
+          icon: '⚡',
+          tag: 'Vue 3 Core',
+          title: 'Composition API',
+          desc: 'Vue 3 最核心的新特性，讓邏輯按功能組織，ref、reactive、computed、watch 全攻略',
+          topics: ['setup() / <script setup>', 'ref & reactive 差異', 'computed & watch', 'Lifecycle Hooks']
+        },
+        {
+          to: '/composables',
+          icon: '🧩',
+          tag: 'Vue 3 Core',
+          title: 'Composables',
+          desc: '用 use 開頭的函數封裝可複用的響應式邏輯，Vue 3 推薦的邏輯複用模式',
+          topics: ['useCounter 基礎範例', 'useFetch 非同步封裝', 'useLocalStorage', '最佳實踐原則']
+        },
+        {
+          to: '/component-comm',
+          icon: '🔗',
+          tag: 'Vue 3 Core',
+          title: '元件通訊',
+          desc: '父子元件、跨層元件之間傳遞資料的四種主要方式，掌握單向資料流核心概念',
+          topics: ['Props & Emits', 'v-model 語法糖', 'provide / inject', '通訊方式選擇指南']
+        },
+        {
           to: '/vuex',
           icon: '🗃️',
           tag: 'State Management',

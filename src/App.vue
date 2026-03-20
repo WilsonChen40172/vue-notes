@@ -8,6 +8,15 @@
             <router-link to="/" exact>首頁</router-link>
           </li>
           <li>
+            <router-link to="/composition">Composition API</router-link>
+          </li>
+          <li>
+            <router-link to="/composables">Composables</router-link>
+          </li>
+          <li>
+            <router-link to="/component-comm">元件通訊</router-link>
+          </li>
+          <li>
             <router-link to="/vuex">Vuex</router-link>
           </li>
           <li>
