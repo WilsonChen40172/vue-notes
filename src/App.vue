@@ -2,22 +2,16 @@
   <div id="app">
     <nav class="navbar">
       <div class="navbar-inner">
-        <div class="brand">Vue 2 學習專案</div>
+        <div class="brand">Vue 3 學習專案</div>
         <ul class="nav-links">
           <li>
             <router-link to="/" exact>首頁</router-link>
-          </li>
-          <li>
-            <router-link to="/reactivity">響應式原理</router-link>
           </li>
           <li>
             <router-link to="/vuex">Vuex</router-link>
           </li>
           <li>
             <router-link to="/router-guard">Router 守衛</router-link>
-          </li>
-          <li>
-            <router-link to="/ie11">IE11 相容</router-link>
           </li>
           <li>
             <router-link to="/cicd">CI/CD</router-link>

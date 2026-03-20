@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="home-hero">
-      <div class="hero-badge">Vue 2 學習專案</div>
+      <div class="hero-badge">Vue 3 學習專案</div>
       <h1 class="hero-title">前端核心知識地圖</h1>
-      <p class="hero-sub">涵蓋 Vue 2 底層原理、狀態管理、路由守衛、瀏覽器相容到 CI/CD 自動化部署，點選卡片開始閱讀</p>
+      <p class="hero-sub">涵蓋 Vue 3 底層原理、狀態管理、路由守衛、瀏覽器相容到 CI/CD 自動化部署，點選卡片開始閱讀</p>
     </div>
 
     <div class="card-grid">
@@ -27,7 +27,7 @@
     </div>
 
     <div class="home-footer">
-      <p>Vue <strong>2.7.16</strong> · Vuex <strong>3</strong> · Vue Router <strong>3</strong> · Webpack <strong>4</strong> · Babel IE11</p>
+      <p>Vue <strong>2.7.16</strong> · Vuex <strong>3</strong> · Vue Router <strong>3</strong> · Webpack <strong>4</strong> · Babel </p>
     </div>
   </div>
 </template>
@@ -38,14 +38,6 @@ export default {
   data() {
     return {
       cards: [
-        {
-          to: '/reactivity',
-          icon: '⚡',
-          tag: 'Vue 2 Core',
-          title: '響應式原理',
-          desc: 'Vue 2 如何透過 Object.defineProperty 攔截資料讀寫，實現畫面自動更新',
-          topics: ['getter / setter 劫持', 'Dep 依賴收集 & Watcher', 'Vue.set / $set 使用場景', 'Vue 3 Proxy 比較']
-        },
         {
           to: '/vuex',
           icon: '🗃️',
@@ -61,15 +53,7 @@ export default {
           title: 'Router 守衛',
           desc: '路由跳轉時的攔截機制，實現登入驗證、權限控制與頁面標題管理',
           topics: ['beforeEach 全域守衛', '路由獨享 beforeEnter', '元件內 beforeRouteLeave', '守衛執行順序']
-        },
-        {
-          to: '/ie11',
-          icon: '🌐',
-          tag: 'Compatibility',
-          title: 'IE11 相容處理',
-          desc: '讓 Vue 2 專案在 IE11 正常執行所需的完整設定與 Polyfill 策略',
-          topics: ['Babel preset-env 設定', 'core-js@3 Polyfill', 'CSS Flexbox -ms- 前綴', 'ES6+ API 偵測']
-        },
+        },    
         {
           to: '/cicd',
           icon: '🚀',

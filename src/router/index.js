@@ -1,18 +1,13 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import store from '@/store'
 
 import HomePage from '@/views/HomePage.vue'
-import ReactivityPage from '@/views/ReactivityPage.vue'
 import VuexPage from '@/views/VuexPage.vue'
 import RouterGuardPage from '@/views/RouterGuardPage.vue'
-import IE11Page from '@/views/IE11Page.vue'
 import LoginPage from '@/views/LoginPage.vue'
 import AdminPage from '@/views/AdminPage.vue'
 import NotFound from '@/views/NotFound.vue'
 import CICDPage from '@/views/CICDPage.vue'
-
-Vue.use(VueRouter)
 
 // ─────────────────────────────────────────────
 // 路由設定
@@ -25,13 +20,7 @@ const routes = [
         path: '/',
         name: 'Home',
         component: HomePage,
-        meta: { title: 'Vue 2 學習專案' }
-    },
-    {
-        path: '/reactivity',
-        name: 'Reactivity',
-        component: ReactivityPage,
-        meta: { title: 'Vue 2 響應式原理' }
+        meta: { title: 'Vue 3 學習專案' }
     },
     {
         path: '/vuex',
@@ -44,12 +33,6 @@ const routes = [
         name: 'RouterGuard',
         component: RouterGuardPage,
         meta: { title: 'Vue Router 守衛 & 權限' }
-    },
-    {
-        path: '/ie11',
-        name: 'IE11',
-        component: IE11Page,
-        meta: { title: 'IE11 相容處理' }
     },
     {
         path: '/login',
@@ -75,15 +58,15 @@ const routes = [
         meta: { title: 'CI/CD 前端知識' }
     },
     {
-        path: '*',
+        path: '/:pathMatch(.*)*',
         name: 'NotFound',
         component: NotFound,
         meta: { title: '404 找不到頁面' }
     }
 ]
 
-const router = new VueRouter({
-    mode: 'history',
+const router = createRouter({
+    history: createWebHistory(),
     routes
 })
 
@@ -109,7 +92,7 @@ router.beforeEach((to, from, next) => {
     // 3. 需要 admin 角色的路由
     if (to.meta.requiresAdmin && !isAdmin) {
         // 已登入但權限不足，導向首頁
-        next({ name: 'Reactivity' })
+        next({ name: 'Home' })
         return
     }
 

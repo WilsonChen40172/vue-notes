@@ -179,7 +179,7 @@ jobs:
       <h2>4. 前端環境變數管理（重要！）</h2>
       <p>CI/CD 中最常踩到的坑：不同環境要用不同的 API URL、Feature Flag 等設定</p>
 
-      <h3>Vue 2 / Vue CLI 的環境變數</h3>
+      <h3>Vue 3 / Vue CLI 的環境變數</h3>
       <pre># .env.development（本地開發）
 VUE_APP_API_URL=http://localhost:3000
 VUE_APP_ENV=development
@@ -194,7 +194,7 @@ VUE_APP_ENV=production</pre>
 
       <div class="env-rules">
         <div class="env-rule env-must">
-          <strong>⚠️ Vue 2 規則：必須以 VUE_APP_ 開頭</strong>
+          <strong>⚠️ Vue 3 規則：必須以 VUE_APP_ 開頭</strong>
           <p>只有 <code>VUE_APP_</code> 前綴的變數才會被打包進前端 bundle</p>
         </div>
         <div class="env-rule env-never">

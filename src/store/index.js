@@ -1,7 +1,4 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-
-Vue.use(Vuex)
+import { createStore } from 'vuex'
 
 // ─────────────────────────────────────────────
 // State：唯一資料來源，所有元件共享
@@ -12,7 +9,7 @@ const state = {
     todos: [
         { id: 1, text: '學習 Vuex', done: true },
         { id: 2, text: '練習 Vue Router', done: false },
-        { id: 3, text: '研究 IE11 相容', done: false }
+        { id: 3, text: '研究相容', done: false }
     ],
     isLoggedIn: false,
     role: 'guest' // guest | user | admin
@@ -133,7 +130,7 @@ const actions = {
     }
 }
 
-export default new Vuex.Store({
+export default createStore({
     state,
     getters,
     mutations,

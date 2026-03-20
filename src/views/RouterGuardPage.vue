@@ -237,7 +237,6 @@ router.beforeEach((to, from, next) => {
       <div v-else class="nav-test">
         <h3>路由跳轉測試</h3>
         <div class="test-buttons">
-          <button class="btn btn-info" @click="goTo('/reactivity')">前往 /reactivity（公開）</button>
           <button class="btn btn-info" @click="goTo('/admin')">前往 /admin（需 admin 角色）</button>
           <button class="btn btn-danger" @click="handleLogout">登出</button>
         </div>

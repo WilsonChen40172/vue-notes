@@ -1,6 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
     mode: 'development',
@@ -12,8 +12,9 @@ module.exports = {
     },
     resolve: {
         alias: {
-            vue$: 'vue/dist/vue.esm.js',
-            '@': path.resolve(__dirname, 'src')
+            '@': path.resolve(__dirname, 'src'),
+            // 強制使用 CJS 版本，避免 Webpack 4 無法解析 .mjs 中的 optional chaining
+            'vue-router': path.resolve(__dirname, 'node_modules/vue-router/dist/vue-router.cjs')
         },
         extensions: ['.js', '.vue', '.json']
     },
@@ -22,6 +23,23 @@ module.exports = {
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
+            },
+            {
+                // vue-router 4.x 使用 .mjs 格式，包含 optional chaining
+                // 需要 babel 轉換才能讓 Webpack 4 正確解析
+                // 使用 path.resolve 避免 Windows 路徑反斜線導致 include regex 不匹配
+                test: /\.mjs$/,
+                include: path.resolve(__dirname, 'node_modules'),
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        plugins: [
+                            '@babel/plugin-transform-optional-chaining',
+                            '@babel/plugin-transform-nullish-coalescing-operator'
+                        ]
+                    }
+                },
+                type: 'javascript/auto'
             },
             {
                 test: /\.js$/,

@@ -1,6 +1,6 @@
-# Vue 2 學習專案
+# Vue 3 學習專案
 
-一個以 Vue 2 為核心、手動設定 Webpack 建置工具鏈的前端學習專案，涵蓋響應式原理、Vuex、Router 守衛、IE11 相容以及 CI/CD 知識。
+一個以 Vue 3 為核心、手動設定 Webpack 建置工具鏈的前端學習專案，涵蓋響應式原理、Vuex、Router 守衛以及 CI/CD 知識。
 
 ## 線上預覽
 
@@ -12,10 +12,9 @@
 
 | 路由            | 頁面             | 說明                                                      |
 | --------------- | ---------------- | --------------------------------------------------------- |
-| `/reactivity`   | Vue 2 響應式原理 | Object.defineProperty、Vue.set、與 Vue 3 Proxy 比較       |
+| `/reactivity`   | Vue 3 響應式原理 | Object.defineProperty、Vue.set、與 Vue 3 Proxy 比較       |
 | `/vuex`         | Vuex 核心概念    | State / Mutations / Actions / Getters 分工說明與互動 Demo |
 | `/router-guard` | Vue Router 守衛  | 全域守衛、路由守衛、元件守衛執行順序與權限控制 Demo       |
-| `/ie11`         | IE11 相容處理    | Babel 設定、CSS Prefix、API 偵測、Polyfill Checklist      |
 | `/cicd`         | CI/CD 前端知識   | CI/CD 概念、工具比較、Pipeline 流程、部署策略、常見問題   |
 | `/login`        | 登入             | 模擬驗證（admin/admin 或 user/user）                      |
 | `/admin`        | 管理後台         | 需登入且為 admin 角色才可存取                             |
@@ -28,7 +27,7 @@
 
 | 套件                                         | 版本      | 用途                                                  |
 | -------------------------------------------- | --------- | ----------------------------------------------------- |
-| [Vue 2](https://v2.vuejs.org/)               | `^2.7.16` | 核心 UI 框架，響應式資料綁定                          |
+| [Vue 3](https://v2.vuejs.org/)               | `^2.7.16` | 核心 UI 框架，響應式資料綁定                          |
 | [Vue Router 3](https://v3.router.vuejs.org/) | `^3.6.5`  | SPA 路由管理、全域路由守衛                            |
 | [Vuex 3](https://v3.vuex.vuejs.org/)         | `^3.6.2`  | 全域狀態管理（Store / Mutations / Actions / Getters） |
 
@@ -45,7 +44,7 @@
 | [css-loader 3](https://github.com/webpack-contrib/css-loader)                | `^3.6.0`   | 解析 CSS `@import` 與 `url()`       |
 | [style-loader 1](https://github.com/webpack-contrib/style-loader)            | `^1.3.0`   | 將 CSS 注入 DOM `<style>` 標籤      |
 
-### Babel / Polyfill（IE11 支援）
+### Babel / Polyfill
 
 | 套件                                                           | 版本      | 用途                                        |
 | -------------------------------------------------------------- | --------- | ------------------------------------------- |
@@ -85,7 +84,6 @@ corejs: 3;
 │       ├── ReactivityPage.vue
 │       ├── VuexPage.vue
 │       ├── RouterGuardPage.vue
-│       ├── IE11Page.vue
 │       ├── CICDPage.vue
 │       ├── LoginPage.vue
 │       ├── AdminPage.vue
@@ -133,5 +131,4 @@ npm run build
 ## 設計
 
 - **暗黑模式**：全站統一色票，無外部 UI 框架，純 CSS scoped styles
-- **IE11 相容**：Flexbox（含 `-ms-` prefix）、無 ES6+ 未 polyfill 語法、CSS Grid 降級
 - **路由守衛**：`beforeEach` 處理標題更新、登入驗證、Admin 角色檢查；`afterEach` 自動捲回頂部
